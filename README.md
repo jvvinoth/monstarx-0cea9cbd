@@ -1,4 +1,4 @@
-# MonstarX - Vite + React + TypeScript Template
+# MonPage - Vite + React + TypeScript Template
 
 A modern, production-ready template for building React applications with Vite, TypeScript, and TailwindCSS.
 
@@ -95,7 +95,7 @@ When building with this template:
 
 ## 🤝 Contributing
 
-This is a MonstarX template repository. For issues or suggestions, please contact the MonstarX team.
+This is a MonPage template repository. For issues or suggestions, please contact the MonPage team.
 
 ## 📄 License
 
@@ -103,4 +103,4 @@ MIT License - feel free to use this template for your projects.
 
 ---
 
-**Built with MonstarX** 🚀
+**Built with MonPage** 🚀

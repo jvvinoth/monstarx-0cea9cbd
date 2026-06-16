@@ -1,10 +1,10 @@
 export const siteContent = {
   meta: {
-    title: "MonstarX — Text us. Get your website.",
+    title: "MonPage — Text us. Get your website.",
     description: "Open WhatsApp, Telegram, or Lion. Describe your business. Your site goes live — no coding, no design decisions, no waiting.",
   },
   header: {
-    logo: "MonstarX",
+    logo: "MonPage",
     navLink: {
       text: "How it works",
       href: "#how-it-works"
@@ -29,9 +29,9 @@ export const siteContent = {
     secondaryText: "No signup. No credit card. Just text.",
     chatMessages: [
       { sender: "user", text: "I run a bakery called Sweet Treats" },
-      { sender: "monstarx", text: "Great! What services do you offer?" },
+      { sender: "monpage", text: "Great! What services do you offer?" },
       { sender: "user", text: "Custom cakes, cupcakes, delivery" },
-      { sender: "monstarx", text: "✓ Building your site..." }
+      { sender: "monpage", text: "✓ Building your site..." }
     ]
   },
   howItWorks: {
@@ -57,6 +57,30 @@ export const siteContent = {
         copy: "We build, design, and publish. Usually within hours, not weeks."
       }
     ]
+  },
+  demoAnimation: {
+    heading: "See it in action",
+    subtext: "Watch how a conversation becomes a website in seconds",
+    animation: {
+      chatMessages: [
+        { sender: "user", text: "I need a website for my coffee shop", delay: 0 },
+        { sender: "monpage", text: "Perfect! What's the name and what makes it special?", delay: 1000 },
+        { sender: "user", text: "Bean & Brew — artisan coffee, fresh pastries, cozy vibe", delay: 2000 },
+        { sender: "monpage", text: "Great! Building your website now...", delay: 3000 }
+      ],
+      buildingPhase: {
+        delay: 4000,
+        duration: 2000,
+        elements: ["Layout", "Design", "Content", "Optimize"]
+      },
+      finalSite: {
+        delay: 6000,
+        heroText: "Bean & Brew",
+        tagline: "Artisan coffee & fresh pastries",
+        sections: ["Menu", "Visit Us", "Order Online"]
+      },
+      loopDelay: 8000
+    }
   },
   useCases: {
     heading: "Built for real businesses",
@@ -109,9 +133,9 @@ export const siteContent = {
         businessType: "Italian Restaurant",
         chat: [
           { sender: "user", text: "I need a website for my Italian restaurant, Bella's Bistro" },
-          { sender: "monstarx", text: "Perfect! Tell me about your menu and atmosphere." },
+          { sender: "monpage", text: "Perfect! Tell me about your menu and atmosphere." },
           { sender: "user", text: "Homemade pasta, wood-fired pizza, cozy family vibe. We do dine-in and takeout." },
-          { sender: "monstarx", text: "Got it. What's your location and hours?" },
+          { sender: "monpage", text: "Got it. What's your location and hours?" },
           { sender: "user", text: "123 Main St, open Tue-Sun 11am-10pm" }
         ],
         sitePreview: {
@@ -125,9 +149,9 @@ export const siteContent = {
         businessType: "Career Coach",
         chat: [
           { sender: "user", text: "Career coach looking for a simple site" },
-          { sender: "monstarx", text: "Great! Who do you help and what results do they get?" },
+          { sender: "monpage", text: "Great! Who do you help and what results do they get?" },
           { sender: "user", text: "Mid-career professionals pivoting to tech. 85% land offers within 3 months." },
-          { sender: "monstarx", text: "Love it. Do you have testimonials or a booking calendar?" },
+          { sender: "monpage", text: "Love it. Do you have testimonials or a booking calendar?" },
           { sender: "user", text: "Yes, I'll send 3 testimonials and my Calendly link" }
         ],
         sitePreview: {
@@ -146,20 +170,20 @@ export const siteContent = {
       href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website"
     },
     altChannels: [
-      { name: "Telegram", href: "https://t.me/monstarx" },
-      { name: "Lion", href: "https://lion.com/monstarx" }
+      { name: "Telegram", href: "https://t.me/monpage" },
+      { name: "Lion", href: "https://lion.com/monpage" }
     ]
   },
   footer: {
-    logo: "MonstarX",
+    logo: "MonPage",
     tagline: "Professional websites, zero complexity",
     contact: [
       { platform: "WhatsApp", href: "https://wa.me/1234567890", icon: "MessageCircle" },
-      { platform: "Telegram", href: "https://t.me/monstarx", icon: "Send" },
-      { platform: "Lion", href: "https://lion.com/monstarx", icon: "MessageSquare" }
+      { platform: "Telegram", href: "https://t.me/monpage", icon: "Send" },
+      { platform: "Lion", href: "https://lion.com/monpage", icon: "MessageSquare" }
     ],
     socialProof: "500+ websites built this week",
-    copyright: "© 2024 MonstarX. All rights reserved."
+    copyright: "© 2024 MonPage. All rights reserved."
   },
   floatingWhatsApp: {
     href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website",
