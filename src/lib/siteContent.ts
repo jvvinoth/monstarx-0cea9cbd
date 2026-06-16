@@ -1,7 +1,7 @@
 export const siteContent = {
   meta: {
     title: "MonPage — Text us. Get your website.",
-    description: "Open WhatsApp, Telegram, or Lion. Describe your business. Your site goes live — no coding, no design decisions, no waiting.",
+    description: "Open WhatsApp, Telegram, or Line. Describe your business. Your site goes live — no coding, no design decisions, no waiting.",
   },
   header: {
     logo: "MonPage",
@@ -10,7 +10,7 @@ export const siteContent = {
       href: "#how-it-works"
     },
     cta: {
-      text: "Order on WhatsApp",
+      text: "Start on WhatsApp",
       href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website"
     }
   },
@@ -21,10 +21,30 @@ export const siteContent = {
       part2: "your website",
       part3: "."
     },
-    subheadline: "Open WhatsApp, Telegram, or Lion. Describe your business. Your site goes live — no coding, no design decisions, no waiting.",
+    subheadline: "Open WhatsApp, Telegram, or Line. Describe your business. Your site goes live — no coding, no design decisions, no waiting.",
+    platforms: [
+      { name: "WhatsApp", color: "#25D366", icon: "MessageCircle" },
+      { name: "Telegram", color: "#0088cc", icon: "Send" },
+      { name: "Line", color: "#00B900", icon: "MessageSquare" }
+    ],
     cta: {
-      text: "Start building on WhatsApp",
-      href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website"
+      primary: {
+        text: "Start on WhatsApp",
+        href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website",
+        icon: "MessageCircle"
+      },
+      secondary: [
+        {
+          text: "Telegram",
+          href: "https://t.me/monpage",
+          icon: "Send"
+        },
+        {
+          text: "Line",
+          href: "https://line.me/ti/p/monpage",
+          icon: "MessageSquare"
+        }
+      ]
     },
     secondaryText: "No signup. No credit card. Just text.",
     chatMessages: [
@@ -42,7 +62,7 @@ export const siteContent = {
         number: 1,
         icon: "MessageSquare",
         heading: "Open your chat app",
-        copy: "WhatsApp, Telegram, or Lion — use what you already have."
+        copy: "WhatsApp, Telegram, or Line — use what you already have."
       },
       {
         number: 2,
@@ -165,13 +185,25 @@ export const siteContent = {
   finalCTA: {
     heading: "Your website, one text away",
     subtext: "No forms to fill. No meetings to book. Just open your chat app and start.",
-    cta: {
-      text: "Start building on WhatsApp",
-      href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website"
-    },
-    altChannels: [
-      { name: "Telegram", href: "https://t.me/monpage" },
-      { name: "Lion", href: "https://lion.com/monpage" }
+    platforms: [
+      {
+        name: "WhatsApp",
+        href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website",
+        icon: "MessageCircle",
+        color: "#25D366"
+      },
+      {
+        name: "Telegram",
+        href: "https://t.me/monpage",
+        icon: "Send",
+        color: "#0088cc"
+      },
+      {
+        name: "Line",
+        href: "https://line.me/ti/p/monpage",
+        icon: "MessageSquare",
+        color: "#00B900"
+      }
     ]
   },
   footer: {
@@ -180,14 +212,32 @@ export const siteContent = {
     contact: [
       { platform: "WhatsApp", href: "https://wa.me/1234567890", icon: "MessageCircle" },
       { platform: "Telegram", href: "https://t.me/monpage", icon: "Send" },
-      { platform: "Lion", href: "https://lion.com/monpage", icon: "MessageSquare" }
+      { platform: "Line", href: "https://line.me/ti/p/monpage", icon: "MessageSquare" }
     ],
     socialProof: "500+ websites built this week",
     copyright: "© 2024 MonPage. All rights reserved."
   },
-  floatingWhatsApp: {
-    href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website",
-    label: "Chat on WhatsApp"
+  floatingCTA: {
+    platforms: [
+      {
+        name: "WhatsApp",
+        href: "https://wa.me/1234567890?text=Hi%2C%20I%20want%20to%20build%20my%20website",
+        icon: "MessageCircle",
+        color: "#25D366"
+      },
+      {
+        name: "Telegram",
+        href: "https://t.me/monpage",
+        icon: "Send",
+        color: "#0088cc"
+      },
+      {
+        name: "Line",
+        href: "https://line.me/ti/p/monpage",
+        icon: "MessageSquare",
+        color: "#00B900"
+      }
+    ]
   }
 } as const;
 

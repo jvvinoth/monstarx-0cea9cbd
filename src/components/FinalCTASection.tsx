@@ -1,6 +1,12 @@
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Send, MessageSquare } from 'lucide-react';
 import { siteContent } from '../lib/siteContent';
 import { useEffect, useRef } from 'react';
+
+const iconMap = {
+  MessageCircle,
+  Send,
+  MessageSquare,
+};
 
 export default function FinalCTASection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,33 +42,53 @@ export default function FinalCTASection() {
           {siteContent.finalCTA.subtext}
         </p>
 
-        {/* Primary CTA */}
-        <a
-          href={siteContent.finalCTA.cta.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fade-in-up inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 mb-6"
-          style={{ animationDelay: '0.2s' }}
-        >
-          <MessageCircle className="w-5 h-5" />
-          {siteContent.finalCTA.cta.text}
-        </a>
+        {/* Platform CTAs - All Three Equally Featured */}
+        <div className="fade-in-up grid md:grid-cols-3 gap-4 mb-6" style={{ animationDelay: '0.2s' }}>
+          {siteContent.finalCTA.platforms.map((platform, idx) => {
+            const Icon = iconMap[platform.icon as keyof typeof iconMap];
+            return (
+              <a
+                key={idx}
+                href={platform.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden bg-white border-2 px-6 py-6 rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                style={{ borderColor: platform.color }}
+              >
+                {/* Background gradient on hover */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                  style={{ backgroundColor: platform.color }}
+                ></div>
+                
+                {/* Icon */}
+                <div className="relative mb-3 flex justify-center">
+                  <div 
+                    className="w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: `${platform.color}20` }}
+                  >
+                    <Icon className="w-7 h-7" style={{ color: platform.color }} />
+                  </div>
+                </div>
 
-        {/* Alternative Channels */}
-        <div className="fade-in-up flex items-center justify-center gap-4 text-sm text-gray-600" style={{ animationDelay: '0.3s' }}>
-          <span>Or reach us on:</span>
-          {siteContent.finalCTA.altChannels.map((channel, idx) => (
-            <a
-              key={idx}
-              href={channel.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-accent font-medium transition-colors underline"
-            >
-              {channel.name}
-            </a>
-          ))}
+                {/* Platform Name */}
+                <div className="relative">
+                  <div className="text-lg font-bold text-gray-900 mb-1">
+                    {platform.name}
+                  </div>
+                  <div className="text-sm font-medium" style={{ color: platform.color }}>
+                    Start chatting →
+                  </div>
+                </div>
+              </a>
+            );
+          })}
         </div>
+
+        {/* Supporting Text */}
+        <p className="fade-in-up text-sm text-muted" style={{ animationDelay: '0.3s' }}>
+          Choose your preferred platform — we're ready on all three
+        </p>
       </div>
     </section>
   );

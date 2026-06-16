@@ -1,6 +1,12 @@
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Send, MessageSquare } from 'lucide-react';
 import { siteContent } from '../lib/siteContent';
 import { useEffect, useRef } from 'react';
+
+const iconMap = {
+  MessageCircle,
+  Send,
+  MessageSquare,
+};
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -44,16 +50,55 @@ export default function HeroSection() {
               {siteContent.hero.subheadline}
             </p>
 
-            {/* CTA Button */}
-            <a
-              href={siteContent.hero.cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
-            >
-              <MessageCircle className="w-5 h-5" />
-              {siteContent.hero.cta.text}
-            </a>
+            {/* Platform Badges - Equal Showcase */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              {siteContent.hero.platforms.map((platform, idx) => {
+                const Icon = iconMap[platform.icon as keyof typeof iconMap];
+                return (
+                  <div
+                    key={idx}
+                    className="inline-flex items-center gap-2 bg-white border-2 px-4 py-2 rounded-full text-sm font-semibold shadow-sm transition-all duration-200"
+                    style={{ borderColor: platform.color, color: platform.color }}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {platform.name}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* CTA Buttons - All Three Platforms */}
+            <div className="space-y-3">
+              {/* Primary CTA */}
+              <a
+                href={siteContent.hero.cta.primary.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 w-full sm:w-auto justify-center"
+              >
+                <MessageCircle className="w-5 h-5" />
+                {siteContent.hero.cta.primary.text}
+              </a>
+
+              {/* Secondary CTAs - Equal Prominence */}
+              <div className="flex gap-3">
+                {siteContent.hero.cta.secondary.map((cta, idx) => {
+                  const Icon = iconMap[cta.icon as keyof typeof iconMap];
+                  return (
+                    <a
+                      key={idx}
+                      href={cta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-white text-gray-700 border-2 border-gray-200 px-6 py-3 rounded-full text-base font-semibold shadow-md hover:shadow-lg hover:scale-105 hover:border-gray-300 transition-all duration-200 flex-1 justify-center"
+                    >
+                      <Icon className="w-4 h-4" />
+                      {cta.text}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
 
             {/* Secondary Text */}
             <p className="text-sm text-muted mt-4">
@@ -64,13 +109,15 @@ export default function HeroSection() {
           {/* Right Column - Chat to Website Visual */}
           <div className="fade-in-up" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
-              {/* Chat Interface */}
+              {/* Chat Interface - Multi-platform Header */}
               <div className="bg-white rounded-2xl shadow-2xl p-6 mb-8 border border-gray-200">
                 <div className="flex items-center gap-2 mb-4 pb-4 border-b border-gray-200">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  <span className="text-xs text-gray-500 ml-2" style={{ fontFamily: 'JetBrains Mono, monospace' }}>WhatsApp</span>
+                  <span className="text-xs text-gray-500 ml-2" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                    WhatsApp • Telegram • Line
+                  </span>
                 </div>
                 <div className="space-y-3">
                   {siteContent.hero.chatMessages.map((msg, idx) => (

@@ -6,7 +6,7 @@ import UseCasesSection from './components/UseCasesSection';
 import LiveExamplesSection from './components/LiveExamplesSection';
 import FinalCTASection from './components/FinalCTASection';
 import Footer from './components/Footer';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
+import FloatingCTA from './components/FloatingWhatsApp';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         <FinalCTASection />
       </main>
       <Footer />
-      <FloatingWhatsApp />
+      <FloatingCTA />
     </div>
   );
 }
